@@ -1,0 +1,6 @@
+@PodcastApp.API_HostAddress = http://localhost:5001
+
+GET {{PodcastApp.API_HostAddress}}/PodcastApplication/
+Accept: application/json
+
+###

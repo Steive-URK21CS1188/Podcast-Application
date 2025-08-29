@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+  <app-sidebar></app-sidebar>
+  <app-top-navbar></app-top-navbar>
+  <h3 style="margin-top:90px"><i class="bi bi-person-fill text-purple "></i> Profile</h3>
+  <div class="content-area text-center mt-5">
+    <div class="d-flex justify-content-center mb-3">
+      <div class="profile-img-wrapper">
+        <ng-container *ngIf="hasImage; else showInitials">
+          <img [src]="profileImageUrl" alt="Profile" class="profile-img" />
+        </ng-container>
+        <ng-template #showInitials>
+          <div class="profile-initials">{{ initials }}</div>
+        </ng-template>
+      </div>
+    </div>
+    <div style="text-align:left;  margin: auto; width: 50%;">
+      <p><strong>Name:</strong> {{ user.fullName || 'N/A' }}</p><br />
+      <p><strong>Email:</strong> {{ user.email || 'N/A' }}</p><br />
+      <p><strong>Phone:</strong> {{ user.phone || 'N/A' }}</p><br />
+      <p><strong>Role:</strong> {{ user.role || 'N/A' }}</p>
+    </div>
+
+  </div>
+</body>
+</html>
+

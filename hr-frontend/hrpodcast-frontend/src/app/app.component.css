@@ -1,0 +1,18 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+.app-container {
+  display: flex;
+}
+
+.content-area {
+  margin-left: 220px; 
+  margin-top: 56px;
+  padding: 1.5rem;
+  flex: 1;
+  overflow-y: auto;
+  height: calc(100vh - 56px);
+}

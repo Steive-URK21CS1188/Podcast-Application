@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+  
+</head>
+<body>
+  <app-sidebar></app-sidebar>
+  <app-top-navbar></app-top-navbar>
+  <div class="container mt-4">
+
+    <div *ngIf="role === 'Admin'">
+      <h2 style="margin-top:50px">On-Air Podcasts</h2>
+    </div>
+    <div class="text-end mb-3" *ngIf="role === 'Admin'">
+    <button class="btn btn-primary" (click)="openCreateModal()">+ Create Podcast</button>
+    </div>
+    <div *ngIf="role === 'User'">
+      <h2 style="margin-top:50px">Available Podcasts</h2>
+    </div>
+    <div class="row">
+      <div class="col-md-4 mb-4" *ngFor="let podcast of approvedPodcasts">
+        <div class="card">
+          <img [src]="podcast.coverImage" alt="cover" class="card-img-top" />
+          <div class="card-body">
+            <div class="mark">
+            <h5>{{ podcast.title }}</h5>
+            <p>{{ podcast.description }}</p>
+              </div>
+            <button class="btn btn-primary" (click)="goToPodcastDetail(podcast.podcastId)">View</button>
+
+            <div *ngIf="role === 'Admin'" class="mt-2">
+
+              <button class="btn btn-warning me-1" (click)="toggleApprove(podcast)" onclick="location.href='http://localhost:4200/podcasts'">Suspend</button>
+              <button class="btn btn-secondary me-1" (click)="openEditModal(podcast.podcastId)">Edit</button>
+              <button class="btn btn-danger" (click)="deletePodcast(podcast.podcastId)">Delete</button>
+
+
+            </div>
+
+            <div class="mt-2">
+              <!-- Subscribe/Unsubscribe --> <div class="mt-2"> <button *ngIf="isSubscribed(podcast.podcastId)" class="btn btn-outline-secondary" (click)="toggleSubscription(podcast.podcastId)"> Unsubscribe </button> <button *ngIf="!isSubscribed(podcast.podcastId)" class="btn btn-outline-info" (click)="toggleSubscription(podcast.podcastId)"> Subscribe </button> </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div> <div *ngIf="role === 'Admin'">
+      <h2 class="mt-5">On-Hold Podcasts</h2> <div class="row">
+        <div class="col-md-4 mb-4" *ngFor="let podcast of unapprovedPodcasts">
+          <div class="card">
+            <img [src]="podcast.coverImage" class="card-img-top" /> <div class="card-body">
+              <div class="mark">
+            <h5>{{ podcast.title }}</h5>
+            <p>{{ podcast.description }}</p>
+                </div>
+            <button class="btn btn-primary" (click)="goToPodcastDetail(podcast.podcastId)">View</button>
+            <div class="mt-2">
+                <button class="btn btn-success me-1" (click)="toggleApprove(podcast)" onclick="location.href='http://localhost:4200/podcasts'">Approve</button> <button class="btn btn-secondary me-1" (click)="openEditModal(podcast.podcastId)">Edit</button> <button class="btn btn-danger" (click)="deletePodcast(podcast.podcastId)">Delete</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="popup-create" *ngIf="showCreateModal">
+    <div class="popup-create-content">
+      <app-podcast-create (close)="closeCreateModal()" (podcastCreated)="refreshAll()">
+        </app-podcast-create>
+      </div>
+      </div>
+    <div class="popup-edit" *ngIf="showEditModal">
+    <div class="popup-edit-content">
+      <app-podcast-edit [podcastId]="editingPodcastId" (close)="closeEditModal()" (podcastUpdated)="handlePodcastUpdated()">
+        </app-podcast-edit>
+      </div>
+    </div>
+  
+  </div>
+</body>
+</html>

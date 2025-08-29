@@ -1,0 +1,12 @@
+C:\Users\Steive\OneDrive\Karunya\Sem-8\hr\Project\hr-backend\PodcastApp.API\PodcastApp.Domain\bin\Debug\net8.0\PodcastApp.Domain.deps.json
+C:\Users\Steive\OneDrive\Karunya\Sem-8\hr\Project\hr-backend\PodcastApp.API\PodcastApp.Domain\bin\Debug\net8.0\PodcastApp.Domain.dll
+C:\Users\Steive\OneDrive\Karunya\Sem-8\hr\Project\hr-backend\PodcastApp.API\PodcastApp.Domain\bin\Debug\net8.0\PodcastApp.Domain.pdb
+C:\Users\Steive\OneDrive\Karunya\Sem-8\hr\Project\hr-backend\PodcastApp.API\PodcastApp.Domain\obj\Debug\net8.0\PodcastApp.Domain.csproj.AssemblyReference.cache
+C:\Users\Steive\OneDrive\Karunya\Sem-8\hr\Project\hr-backend\PodcastApp.API\PodcastApp.Domain\obj\Debug\net8.0\PodcastApp.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Steive\OneDrive\Karunya\Sem-8\hr\Project\hr-backend\PodcastApp.API\PodcastApp.Domain\obj\Debug\net8.0\PodcastApp.Domain.AssemblyInfoInputs.cache
+C:\Users\Steive\OneDrive\Karunya\Sem-8\hr\Project\hr-backend\PodcastApp.API\PodcastApp.Domain\obj\Debug\net8.0\PodcastApp.Domain.AssemblyInfo.cs
+C:\Users\Steive\OneDrive\Karunya\Sem-8\hr\Project\hr-backend\PodcastApp.API\PodcastApp.Domain\obj\Debug\net8.0\PodcastApp.Domain.csproj.CoreCompileInputs.cache
+C:\Users\Steive\OneDrive\Karunya\Sem-8\hr\Project\hr-backend\PodcastApp.API\PodcastApp.Domain\obj\Debug\net8.0\PodcastApp.Domain.dll
+C:\Users\Steive\OneDrive\Karunya\Sem-8\hr\Project\hr-backend\PodcastApp.API\PodcastApp.Domain\obj\Debug\net8.0\refint\PodcastApp.Domain.dll
+C:\Users\Steive\OneDrive\Karunya\Sem-8\hr\Project\hr-backend\PodcastApp.API\PodcastApp.Domain\obj\Debug\net8.0\PodcastApp.Domain.pdb
+C:\Users\Steive\OneDrive\Karunya\Sem-8\hr\Project\hr-backend\PodcastApp.API\PodcastApp.Domain\obj\Debug\net8.0\ref\PodcastApp.Domain.dll

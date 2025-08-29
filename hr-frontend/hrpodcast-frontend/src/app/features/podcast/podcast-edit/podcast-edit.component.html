@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head></head>
+<body>
+  <div class="popup">
+  <div class="popup-content">
+    <h3 style="padding-top:25px;">Edit Podcast</h3>
+    <form (ngSubmit)="update()">
+    <div class="mb-3">
+      <label>Title</label>
+      <input class="form-control" [(ngModel)]="podcast.title" name="title" required />
+      </div>
+    <div class="mb-3">
+      <label>Description</label>
+      <textarea class="form-control" [(ngModel)]="podcast.description" name="description"></textarea>
+      </div>
+    <div class="mb-3">
+      <label>Category</label>
+      <input class="form-control" [(ngModel)]="podcast.category" name="category" />
+      </div>
+    <div class="mb-3">
+  <label>Cover Image URL</label>
+      <input type="file" id="coverImage" class="form-control" (change)="uploadCoverImage($event)" />
+  <small class="form-text text-muted">
+      <p style="color:white">Upload the cover image for the podcast.</p>
+    </small>
+</div>
+    <div class="text-end">
+      <button type="submit" class="btn btn-success me-2">Update</button>
+      <button type="button" style="margin-top: 10px; margin-bottom: 20px; " class="btn btn-secondary" (click)="cancel()">Cancel</button>
+      </div>
+      </form>
+    </div>
+  </div>
+</body>
+</html>

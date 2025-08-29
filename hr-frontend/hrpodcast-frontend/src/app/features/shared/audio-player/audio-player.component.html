@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head></head>
+<body>
+  <div class="audio-player" *ngIf="episodes.length">
+    <div *ngIf="showPlayer" class="audio-wrapper">
+      <img [src]="podcast.coverImage" alt="Thumbnail" class="thumbnail" />
+      <div class="details">
+        <h5>{{ episodes[currentIndex].title }}</h5>
+        <p>{{ episodes[currentIndex].releaseDate | date:'mediumDate' }}</p>
+      </div>
+      <input type="range" [value]="currentTime" [max]="duration" (input)="onSeek($event)" />
+      <div class="time">
+        <span>{{ formatTime(currentTime) }}</span>
+        <span>{{ formatTime(duration) }}</span>
+      </div>
+      <div class="controls">
+        <button (click)="previous()">⏮️</button>
+        <button (click)="playPause()">{{ isPlaying ? '⏸️' : '▶️' }}</button>
+        <button (click)="next()">⏭️</button>
+        <button (click)="close()">Close</button>
+      </div>
+      </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head></head>
+<body>
+
+  <app-sidebar></app-sidebar>
+  <app-top-navbar></app-top-navbar>
+  <div class="container mt-4">
+    <h3 style="margin-top:50px">⭐ My Subscribed Podcasts</h3>
+    <div class="row">
+      <div class="col-md-4 mb-4" *ngFor="let podcast of subscribedPodcasts">
+        <div class="card subscription-card h-100">
+          <img [src]="podcast.coverImage" class="card-img-top" />
+          <div class="card-body"><div class="mark">
+            <h5>{{ podcast.title }}</h5>
+            <p>{{ podcast.description }}</p>
+            </div>
+          <div class="card-buttons">
+            <button class="btn btn-primary mt-2" (click)="goToPodcast(podcast.podcastId)">View</button>
+            <button class="btn btn-danger mt-2" (click)="unsubscribe(podcast.podcastId)">
+              Unsubscribe
+            </button>
+          </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

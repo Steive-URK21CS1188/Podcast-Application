@@ -1,0 +1,390 @@
+/* You can add global styles to this file, and also import other style files */
+/* General styling */
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #06202B;
+  color: #fff;
+  margin: 0;
+  padding: 0;
+}
+
+h2, h3 {
+  color: #F5EEDD;
+  text-align: center;
+}
+
+/* Navbar Styling */
+
+.navbar {
+  background-color: #077A7D;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 2rem;
+  width: 100%;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.none {
+  color: transparent;
+  padding: 14px 20px;
+  text-decoration: none;
+  text-align: center;
+  font-size: 18px;
+}
+  .none:hover {
+    color: transparent;
+    padding: 14px 20px;
+    text-decoration: none;
+    text-align: center;
+    font-size: 18px;
+  }
+
+.top-navbar {
+  position: fixed;
+}
+
+  .top-navbar a {
+    color: #F5EEDD;
+    padding: 14px 20px;
+    text-decoration: none;
+    text-align: center;
+    font-size: 18px;
+  }
+
+    .top-navbar a:hover {
+      background-color: #ddd;
+      color: black;
+    }
+
+/* Sidebar Styling */
+.sidebar {
+  height: 100%;
+  width: 200px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color:#F5EEDD;
+  padding-top: 20px;
+}
+
+  .sidebar a {
+    margin: 45px 0px 0px 0px;
+    padding: 10px 15px;
+    text-decoration: none;
+    font-size: 18px;
+    color: #077A7D;
+    display: block;
+    transition: 0.3s;
+  }
+
+    .sidebar a:hover {
+      color: #fff;
+      background-color: #34495e;
+    }
+
+  .sidebar .active {
+    color: #fff;
+    background-color: #3498db;
+  }
+
+/* Content Alignment */
+.container {
+  margin-left: 205px;
+  padding: 20px;
+}
+
+/* Podcast Cards */
+.card {
+  background-color:#7AE2CF;
+  border-radius: 10px;
+  margin: 15px;
+  padding: 20px;
+  transition: all 0.3s ease-in-out;
+}
+
+  .card:hover {
+    transform: scale(1.05);
+  }
+
+  .card img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+  }
+
+.card-title {
+  color: #fff;
+  font-size: 20px;
+  margin-top: 10px;
+}
+
+.card p {
+  color: #b0b0b0;
+  font-size: 14px;
+}
+
+/* Button Styles */
+button {
+  padding: 10px 20px;
+  border-radius: 5px;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+  button:hover {
+    opacity: 0.8;
+  }
+
+  /* Subscribe Button Styles */
+  button.subscribe {
+    background-color: #1abc9c;
+  }
+
+  button.unsubscribe {
+    background-color: #e74c3c;
+  }
+
+  button.view {
+    background-color: #3498db;
+  }
+
+/* Profile Page */
+
+.profile-img-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 8px;
+  margin-bottom: 15px;
+  width: 150px;
+  height: 150px;
+}
+
+  .profile-img-wrapper img {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    object-fit: contain;
+    border: 3px solid #fff;
+    background-color: #FFFFFF;
+  }
+
+.profile-initials {
+  background-color: #3498db;
+  color: #fff;
+  font-size: 30px;
+  width: 120px;
+  height: 120px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+}
+
+.profile-details {
+  color: #fff;
+  margin-top: 20px;
+  text-align: left;
+}
+
+/* Player Styles */
+.custom-audio-player {
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: white ;
+  padding: 10px;
+  width: 100%;
+  max-width: 700px;
+  z-index: 999;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.player-controls button {
+  background: none;
+  border: none;
+  color: #2c3e50;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.player-progress {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+  .player-progress input {
+    width: 100%;
+    margin: 0 10px;
+    cursor: pointer;
+  }
+
+  .player-progress span {
+    font-size: 14px;
+    color: white;
+  }
+
+/* Footer Styling */
+footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #2c3e50;
+  color: white;
+}
+
+/* Mobile Responsive Design */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .sidebar {
+    width: 200px;
+  }
+
+  .container {
+    margin-left: 200px;
+  }
+
+  .card {
+    width: 100%;
+  }
+
+  .custom-audio-player {
+    max-width: 100%;
+  }
+
+  .profile-details {
+    text-align: center;
+  }
+}
+
+/* Dark Mode */
+body {
+  background-color: #06202B;
+}
+
+.navbar {
+  background-color: #077A7D;
+}
+
+.sidebar {
+  background-color:#F5EEDD;
+}
+
+.card {
+  background-color: #077A7D;
+}
+
+button {
+  background-color: #2980b9;
+}
+
+/* Form Styling for Login/Registration */
+form {
+  max-width: 500px;
+  margin: auto;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+}
+
+  input:focus {
+    outline: none;
+    border-color: #3498db;
+  }
+
+button[type="submit"] {
+  width: 100%;
+  padding: 10px;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  font-size: 18px;
+  border-radius: 5px;
+}
+
+  button[type="submit"]:hover {
+    background-color: #2980b9;
+  }
+
+.login-again {
+  text-align: center;
+}
+
+  .login-again a {
+    background-color: #3498db;
+    padding: 10px 20px;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+  }
+
+    .login-again a:hover {
+      background-color: #2980b9;
+    }
+
+h1, h2, h3, h4, h5 {
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+/* ✅ Global modal backdrop styles for both modals */
+.popup-create,
+.popup-edit {
+position: fixed;
+top: 0;
+left: 0;
+width: 100vw;
+height: 100vh;
+background: rgba(0, 0, 0, 0.6); /* Semi-transparent dark background */
+display: flex;
+align-items: center;
+justify-content: center;
+z-index: 10000;
+padding: 20px;
+}
+
+/* ✅ Create Podcast Modal styling */
+.popup-create-content {
+  background-color: #ffffff;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 600px;
+  padding: 30px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+  overflow-y: auto;
+  max-height: 90vh;
+}
+
+/* ✅ Edit Podcast Modal styling */
+.popup-edit-content {
+  background-color: #ffffff;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 600px;
+  padding: 30px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+  overflow-y: auto;
+  max-height: 90vh;
+}
+
+

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script>
+    function redirectToPodcast(podcastId) {
+      location.href = `http://localhost:4200/podcasts/${podcastId}`;
+    }
+  </script>
+</head>
+<body>
+
+    <app-sidebar></app-sidebar>
+    <app-top-navbar></app-top-navbar>
+    <div class="container mt-4">
+      <!-- 🎯 Title and description -->
+      <h2 style="margin-top:50px" class="text-center">{{ podcast?.title }}</h2>
+      <p class="text-center">{{ podcast?.description }}</p>
+      <!-- 🟢 Top controls -->
+      <div class="d-flex justify-content-end mb-4">
+      <!-- <button class="btn btn-outline-success" (click)="playAll()">▶️ Play All</button>-->
+      <button class="btn btn-primary" *ngIf="role === 'Admin'" (click)="openCreateModal()">+ Add Episode</button>
+        </div>
+      <!-- 🎧 Episodes list -->
+      <div class="row">
+        <div class="col-md-6 mb-3" *ngFor="let episode of episodes; let i = index">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">{{ episode.title }}</h5> <p><strong>Duration:</strong> {{ episode.duration }} mins</p> <p><strong>Notes:</strong> {{ episode.notes }}</p>
+
+              <button class="btn btn-primary me-2" (click)="playEpisode(i)">▶️ Play</button>
+
+              <ng-container *ngIf="role === 'Admin'">
+                <button class="btn btn-warning me-2" (click)="openEditModal(episode.episodeId)">✏️ Edit</button>
+                <button class="btn btn-danger" (click)="deleteEpisode(episode.episodeId,episode.podcastId)">🗑️ Delete</button>
+              </ng-container>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div *ngIf="showPlayer" class="custom-audio-player">
+        <div class="audio-player-bar">
+          <!-- Play/Pause --> <button class="icon-btn" (click)="togglePlayPause()" title="Play/Pause"> <i [ngClass]="isPlaying ? 'bi bi-pause-fill' : 'bi bi-play-fill'"></i> </button>
+
+          <!-- Time + Seek Bar -->
+          <div class="progress-wrapper">
+            <span class="time">{{ formatTime(currentAudio?.currentTime || 0) }}</span>
+            <input type="range"
+                   class="form-range"
+                   min="0"
+                   [max]="currentAudio?.duration || 0"
+                   [value]="currentAudio?.currentTime || 0"
+                   (input)="seekAudio($event)" />
+            <span class="time">{{ formatTime(currentAudio?.duration || 0) }}</span>
+          </div>
+
+          <!-- Close -->
+          <button class="icon-btn" (click)="hidePlayer()" title="Close">
+            <i class="bi bi-x-lg"></i>
+          </button>
+
+        </div>
+      </div>
+      <!-- 🔁 Create Modal --> <div id="createEpisodeModal" class="popup" *ngIf="showCreateModal"> <div class="popup-content"> <app-episode-create [podcastId]="podcastId" (close)="closeCreateModal()" (episodeCreated)="handleEpisodeChange()"></app-episode-create> </div> </div> <!-- 🔁 Edit Modal --> <div id="editEpisodeModal" class="popup" *ngIf="showEditModal"> <div class="popup-content"> <app-episode-edit [episodeId]="editingEpisodeId" (close)="closeEditModal()" (episodeUpdated)="handleEpisodeChange()"></app-episode-edit> </div> </div>
+    </div>
+    <div>
+      <ng-template #loading>
+        <p>Loading podcast details...</p>
+      </ng-template>
+    </div>
+</body>
+</html>

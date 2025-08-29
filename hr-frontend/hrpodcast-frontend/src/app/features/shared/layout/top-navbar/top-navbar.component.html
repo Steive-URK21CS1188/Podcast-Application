@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+</head>
+<body>
+  <nav class="navbar navbar-dark  top-navbar d-flex justify-content-between align-items-center px-3">
+    <button *ngIf="showBack" class="btn btn-outline-light" (click)="goBack()">← Back</button>
+    <div *ngIf="showDummy"><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p></div>
+    <div class="navbar-title mx-auto text-center ">
+      <i class="bi bi-mic"></i> <strong>Podcast App</strong>
+    </div>
+    <button class="btn btn-outline-light" (click)="logout()">Logout</button>
+  </nav>
+</body>
+</html>

@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\PodcastApp.API.props" />
+</Project>

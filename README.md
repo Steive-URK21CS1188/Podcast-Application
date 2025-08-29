@@ -63,7 +63,7 @@ This application enables users to create, manage, and listen to podcasts with an
 
 ### 1. Clone the Repository  
 ```bash
-git clone https://github.com/your-username/podcast-management-app.git
+git clone https://github.com/Steive-URK21CS1188/podcast-management-app.git
 cd podcast-management-app
 ```
 ### 2. Backend Setup (.NET + SQL Server) 

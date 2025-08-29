@@ -55,7 +55,32 @@ This application enables users to create, manage, and listen to podcasts with an
 ---
 
 ## 📸 Screenshots  
-(Add screenshots of your app pages: Login, Dashboard, Podcast List, Subscriptions, Profile, Audio Player, etc.)  
+
+### Registration/Login
+
+![register](https://github.com/user-attachments/assets/35af76c5-2421-410e-bb76-5973a187424a)
+
+![login](https://github.com/user-attachments/assets/a926d9d2-c651-491c-bb11-3fd7017f144e)
+
+### Admin Podcast Home
+
+![admin home](https://github.com/user-attachments/assets/f254833a-ac8f-4792-aa1f-7d4e7d8039c1)
+
+### User Podcast Home
+
+![user home](https://github.com/user-attachments/assets/3e12b5c1-7b78-4f15-9391-e86461c4400c)
+
+### Episodes Page
+
+![episodes](https://github.com/user-attachments/assets/23a5203f-250e-4000-b5ea-76ea0b1775db)
+
+### Subscription Page
+
+![subscrip](https://github.com/user-attachments/assets/2e943154-2cc1-42fe-9781-d830346b1c36)
+
+### Profile Page
+
+![profile ](https://github.com/user-attachments/assets/b5551115-b2d9-4f79-9daa-ae027b528652)
 
 ---
 
